@@ -1,0 +1,28 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>World energy, in watercolor shader</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Newsreader:ital,opsz,wght@0,6..72,400;0,6..72,600;1,6..72,400&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+<div class="wrap">
+  <div class="sheet">
+    <div id="art-loading" class="art-loading" aria-live="polite">Painting…</div>
+    <img id="art" alt="Left-to-right stream graph of world primary energy consumption by source, 1965 to 2024, painted in watercolor, with notes joined to the data by hand-drawn swoopy arrows" width="2500" height="1750" hidden>
+  </div>
+  <aside>
+    <h1>World energy, in watercolor</h1>
+    <p>Sixty years of world primary energy use, 1965–2024, as a bump stream read left to right: every year the sources are stacked by size, smallest on top, so overtakes show as crossings. Each source is painted by a WebGL2 watercolor shader (domain-warped bleed, pooling, granulation, paper fibres and edge darkening), and every note points at its exact data point with a swoopy arrow, after Bloomberg Businessweek’s swoopyarrows. The data stays fixed; the seed only changes the hand.</p>
+    <div class="ctl"><input id="seed" type="number" aria-label="Seed"><button type="button" id="go">Redraw by hand</button></div>
+    <div class="ctl" style="margin-top:.5rem"><button type="button" id="again" style="background:transparent;color:var(--accent);flex:1">Repaint this seed</button></div>
+    <div class="status" id="status" aria-live="polite"></div>
+  </aside>
+</div>
+<script type="module" src="js/main.js"></script>
+</body>
+</html>

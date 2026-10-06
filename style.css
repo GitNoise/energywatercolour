@@ -1,0 +1,24 @@
+:root{--bg:#E6E1D4;--ink:#22262D;--muted:#5D6068;--accent:#C63D27;--panel:#F2ECDD;
+  box-sizing:border-box;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}
+@media (prefers-color-scheme:dark){:root:not([data-theme="light"]){--bg:#17191C;--ink:#E4E0D6;--muted:#9A9890;--accent:#F08A6B;--panel:#24262A}}
+:root[data-theme="dark"]{--bg:#17191C;--ink:#E4E0D6;--muted:#9A9890;--accent:#F08A6B;--panel:#24262A}
+*,*::before,*::after{box-sizing:inherit}
+html{scroll-padding-top:env(safe-area-inset-top,0px)}
+body{margin:0;background:var(--bg);color:var(--ink);font-family:"Newsreader",Georgia,serif}
+.wrap{max-width:1560px;margin:0 auto;padding:2rem 1.25rem 3rem;display:grid;gap:1.5rem}
+.sheet{box-shadow:0 1px 0 rgba(0,0,0,.08),0 30px 60px -30px rgba(30,25,15,.45)}
+.art-loading{display:flex;align-items:center;justify-content:center;width:100%;aspect-ratio:2500/1750;background:#F2ECDD;color:var(--muted);font-style:italic;padding:2rem;text-align:center}
+#art{display:block;width:100%;height:auto;aspect-ratio:2500/1750;background:#F2ECDD}
+#art[hidden],.art-loading[hidden]{display:none}
+aside{display:grid;grid-template-columns:minmax(0,40rem) 320px;justify-content:space-between;gap:1rem 2rem;align-items:start}
+aside h1,aside p{grid-column:1}
+aside .ctl,aside .status{grid-column:2}
+aside .ctl:first-of-type{grid-row:1}
+@media (max-width:760px){aside{grid-template-columns:1fr}aside .ctl,aside .status,aside .ctl:first-of-type{grid-column:1;grid-row:auto}}
+h1{font-weight:400;font-size:2.2rem;line-height:1.05;margin:0 0 .6rem}
+aside p{color:var(--muted);margin:0 0 1.25rem;line-height:1.5}
+.ctl{display:flex;gap:.5rem;font-family:system-ui,-apple-system,"Segoe UI",sans-serif;font-size:.9rem}
+.ctl input{flex:1;min-width:0;font:inherit;padding:.5rem;border:1px solid rgba(0,0,0,.15);background:var(--panel);color:var(--ink)}
+button{font:inherit;padding:.55rem .9rem;border:1px solid var(--accent);background:var(--accent);color:#fff;cursor:pointer}
+button:focus-visible,input:focus-visible{outline:2px solid var(--accent);outline-offset:2px}
+.status{font-style:italic;color:var(--muted);font-size:.9rem;margin-top:.75rem}
