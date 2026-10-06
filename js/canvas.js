@@ -1,8 +1,23 @@
-// The off-screen canvas the whole piece is painted on, and the base palette.
-/* ===== canvas & paint ===== */
-// The painting is built off-screen, then shown as a plain image.
-export const cv = document.createElement('canvas'); cv.width = 2500; cv.height = 1750;   // 10:7, a little taller than 16:9 so it fills more of a phone screen
-export const ctx = cv.getContext('2d'), W = cv.width, H = cv.height;
-export const PAPER = '#F2ECDD', INK = '#3A322B';   // a warm, slightly brown ink that sits with the paper
-// One watercolor layer: a faint multiplied fill. Paper grain is added once afterwards, which is far cheaper than masking every layer.
-export const RED = '#C63D27', BLUE = '#2F5D8A', NAVY = '#1F3A5F', ORANGE = '#EE8A3C', YELLOW = '#F2C14E';
+/**
+ * Off-screen canvas and colour palette.
+ *
+ * The whole piece is painted on `cv`, then exported as a PNG in main.js.
+ * 2500 × 1750 (10:7) — slightly taller than 16:9 so it fills phone screens.
+ */
+
+export const cv = document.createElement('canvas');
+cv.width = 2500;
+cv.height = 1750;
+
+export const ctx = cv.getContext('2d');
+export const W = cv.width;
+export const H = cv.height;
+
+// Paper and ink
+export const PAPER = '#F2ECDD';
+export const INK = '#3A322B';
+
+// Annotation and chart accents
+export const RED = '#C63D27';
+export const BLUE = '#2F5D8A';
+export const NAVY = '#1F3A5F';
